@@ -8,7 +8,8 @@ from datetime import datetime
 st.set_page_config(
     page_title="Solventics AI",
     page_icon="🤖",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"  # 이 옵션 추가
 )
 
 # 스타일 숨기기 (Streamlit 기본 메뉴 등)
