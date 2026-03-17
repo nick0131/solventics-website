@@ -243,7 +243,7 @@ def load_notices():
         if "gcp_service_account" not in st.secrets:
             raise ValueError("No secrets")
         client = get_gspread_client()
-        sheet = client.open("Notice_Data").sheet1
+        sheet = client.open("Contact_Data").worksheet("Notice_Data")
         rows = sheet.get_all_records()  # 헤더 행 자동 제외
         return rows  # [{"date":..., "title_ko":..., ...}, ...]
     except Exception:
