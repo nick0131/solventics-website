@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 # --- [1] 페이지 기본 설정 ---
 st.set_page_config(
@@ -224,7 +224,8 @@ def save_to_sheet(name, email, message):
             return False
         client = get_gspread_client()
         sheet = client.open("Contact_Data").sheet1
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        KST = timezone(timedelta(hours=9))
+        timestamp = datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S")
         sheet.append_row([timestamp, name, email, message])
         return True
     except Exception as e:
