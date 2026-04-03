@@ -6,7 +6,7 @@ from datetime import datetime, timezone, timedelta
 
 # --- [1] 페이지 기본 설정 ---
 st.set_page_config(
-    page_title="Solventics AI",
+    page_title="Solventics AI Inc.",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -28,14 +28,14 @@ if "lang" not in st.session_state:
 # --- [3] 텍스트 딕셔너리 ---
 TEXT = {
     "한국어": {
-        "site_title": "Solventics AI",
+        "site_title": "Solventics AI Inc.",
         "menu_label": "메뉴",
         "menu_items": ["홈", "회사 소개", "솔루션", "공지사항", "문의하기"],
         "sidebar_caption": "중요한 것에 집중하세요.\n리스크는 저희가 처리합니다.",
 
         # Home
         "home_title": "데이터 기반 의사결정, AI가 이끄는 미래",
-        "home_subtitle": "Solventics AI에 오신 것을 환영합니다.",
+        "home_subtitle": "Solventics AI Inc.에 오신 것을 환영합니다.",
         "home_vision_label": "💡 **Our Vision**",
         "home_vision_text": """
         복잡한 데이터를 명쾌한 솔루션으로 전환합니다.
@@ -49,10 +49,10 @@ TEXT = {
         """,
         "home_news_title": "📢 최신 소식",
         "news_items": [
-            ("2026.01.09", "Solventics AI Risk Pro 개발 (Pre-alpha)"),
-            ("2026.01.06", "Solventics AI 법인 홈페이지 정식 오픈"),
+            ("2026.03.31", "LNMR(Life/LT Non-Market Risk) 경험분석 엔진 개발 (On-Premise / SaaS)"),
+            ("2026.01.09", "법인 사업자 등록"),
+            ("2026.01.06", "Solventics AI Inc. 법인 홈페이지 오픈"),
             ("2026.01.02", "AI Actuarial Consultant Pro 개발 (Beta)"),
-            ("2025.12.30", "법인 설립 등기 완료"),
         ],
 
         # About us
@@ -69,31 +69,41 @@ TEXT = {
         "ceo_quote": "**\"데이터 속에 숨겨진 리스크와 기회를 통계적 통찰로 밝혀냅니다.\"**",
         "ceo_bio": """
         - **통계학 박사 (Ph.D. in Statistics)**
-        - 현) 보험 계리 및 리스크 관리(Actuarial Science & Risk Mgmt) 전문 기업 Solventics AI 대표
+        - 현) 보험 계리 및 리스크 관리(Actuarial Science & Risk Mgmt) 전문 기업 Solventics AI Inc. 대표
         - 데이터 기반 의사결정 및 기업 전략 수립 전문가
         - 16년 이상의 컨설팅, 세일즈 및 지역 경영(Regional Management) 경력
         """,
 
         # Solutions
         "solutions_title": "솔루션",
-        "tab_consulting": "AI 컨설팅",
+        "tab_onpremise": "On-Premise 제품",
         "tab_saas": "SaaS 제품",
+        "tab_consulting": "AI & 컨설팅",
+
+        "onpremise_title": "💻 보험 계리 및 리스크 솔루션",
+        "onpremise_items": [
+            "**LNMR(Life/LT Non-Market Risk) 경험분석 엔진:** 내부모형 승인 지원 솔루션",
+            "[개발 예정] (Stochastic) Risk Adjustment 산출 엔진",            
+            "[개발 예정] 가정관리 시스템",
+            "[개발 예정] Life/LT Pricing 엔진",
+            "[개발 예정] GMxB 보증비용 산출 및 리스크 평가 엔진",            
+            "[개발 예정] FP&A 솔루션 (재무계획 및 분석 지원 도구)",
+        ],
+        "saas_title": "💻 SaaS 특화 소프트웨어",
+        "saas_items": [
+            "**LNMR(Life/LT Non-Market Risk) 경험분석 엔진:** 내부모형 승인 지원 솔루션",
+            "**AI Actuarial Consultant Pro (Beta):** Mortality Risk 심층 분석 및 진단 솔루션",
+        ],
         "consulting_title": "🏢 AI & 데이터 컨설팅",
         "consulting_items": [
             "기업 맞춤형 데이터 분석 전략 수립",
             "리스크 관리 및 예측 모델링",
             "프로세스 자동화 (RPA) 구축",
         ],
-        "saas_title": "💻 특화 소프트웨어",
-        "saas_items": [
-            "**Solventics AI Risk Pro (Pre-alpha):** 보험 리스크 분석 및 자동 리포팅 솔루션",
-            "**AI Actuarial Consultant Pro (Beta):** Mortality Risk 심층 분석 및 진단 솔루션",
-            "금융 시장 예측 및 포트폴리오 최적화 도구",
-        ],
 
         # Notice
         "notice_title": "공지사항 & 뉴스",
-        "notice_desc": "Solventics AI의 새로운 소식과 공지사항을 알려드립니다.",
+        "notice_desc": "Solventics AI Inc.의 새로운 소식과 공지사항을 알려드립니다.",
         "notices": [
             {"date": "2026-01-06", "title": "Solventics AI 공식 홈페이지 오픈", "tag": "뉴스"},
             {"date": "2025-12-30", "title": "주식회사 솔벤틱스에이아이 설립 완료", "tag": "회사"},
@@ -101,7 +111,7 @@ TEXT = {
 
         # Contact
         "contact_title": "문의하기",
-        "contact_desc": "Solventics AI와 함께 비즈니스의 미래를 설계하세요.",
+        "contact_desc": "Solventics AI Inc.와 함께 비즈니스의 미래를 설계하세요.",
         "form_name": "이름 (Name)",
         "form_email": "이메일 (Email)",
         "form_message": "문의 내용 (Message)",
@@ -111,21 +121,21 @@ TEXT = {
         "form_success": "님, 문의가 성공적으로 접수되었습니다! 담당자가 검토 후 연락드리겠습니다.",
         "form_error": "서버 연결 문제로 전송에 실패했습니다.",
         "office_label": "📍 **주소:**",
-        "office_value": "(06025) 서울특별시 강남구 논현로 152길 15 311호",
+        "office_value": "(06025) 서울특별시 강남구 논현로 152길 15, 3층 311호",
         "email_label": "📧 **이메일:**",
 
         "footer": "© 2026 Solventics AI Inc. All Rights Reserved.",
     },
 
     "English": {
-        "site_title": "Solventics AI",
+        "site_title": "Solventics AI Inc.",
         "menu_label": "Menu",
         "menu_items": ["Home", "About us", "Solutions", "Notice", "Contact"],
         "sidebar_caption": "Focus on what matters.\nWe handle the risk.",
 
         # Home
         "home_title": "Data-Driven Decisions, AI-Powered Future",
-        "home_subtitle": "Welcome to Solventics AI.",
+        "home_subtitle": "Welcome to Solventics AI Inc.",
         "home_vision_label": "💡 **Our Vision**",
         "home_vision_text": """
         We transform complex data into clear, actionable solutions.
@@ -146,7 +156,7 @@ TEXT = {
         ],
 
         # About us
-        "about_title": "About Solventics AI",
+        "about_title": "About Solventics AI Inc.",
         "about_tagline": "### 'AI Solutions that Dissolve Problems'",
         "about_desc": """
         Solventics AI Inc. was founded on a foundation of advanced statistical expertise and IT technology.
@@ -159,31 +169,41 @@ TEXT = {
         "ceo_quote": "**\"We uncover the risks and opportunities hidden in data through statistical insight.\"**",
         "ceo_bio": """
         - **Ph.D. in Statistics**
-        - CEO of Solventics AI, specializing in Actuarial Science & Risk Management
+        - CEO of Solventics AI Inc., specializing in Actuarial Science & Risk Management
         - Expert in data-driven decision-making and corporate strategy
         - 16+ years of experience in consulting, sales, and regional management
         """,
 
         # Solutions
         "solutions_title": "Our Solutions",
-        "tab_consulting": "AI Consulting",
+        "tab_onpremise": "On-Premise Products",
         "tab_saas": "SaaS Products",
+        "tab_consulting": "AI & Consulting",
+
+        "onpremise_title": "💻 Actuarial & Risk Solutions",
+        "onpremise_items": [
+            "**LNMR(Life/LT Non-Market Risk) Experience Analysis Engine:** Internal model approval support solution",
+            "[Planned] (Stochastic) Risk Adjustment calculation engine",
+            "[Planned] Assumption management system",
+            "[Planned] Life/LT Pricing engine",
+            "[Planned] GMxB guarantee cost calculation and risk assessment engine",
+            "[Planned] FP&A solution (financial planning and analysis support tool)",
+        ],
+        "saas_title": "💻 Specialized SaaS Software",
+        "saas_items": [
+            "**LNMR(Life/LT Non-Market Risk) Experience Analysis Engine:** Internal model approval support solution",
+            "**AI Actuarial Consultant Pro (Beta):** In-depth mortality risk analysis and diagnostics",
+        ],
         "consulting_title": "🏢 AI & Data Consulting",
         "consulting_items": [
             "Custom data analytics strategy for enterprises",
             "Risk management and predictive modeling",
             "Robotic Process Automation (RPA) implementation",
         ],
-        "saas_title": "💻 Specialized Software",
-        "saas_items": [
-            "**Solventics AI Risk Pro (Pre-alpha):** Insurance risk analysis and automated reporting solution",
-            "**AI Actuarial Consultant Pro (Beta):** In-depth mortality risk analysis and diagnostics",
-            "Financial market forecasting and portfolio optimization tools",
-        ],
 
         # Notice
         "notice_title": "Notice & News",
-        "notice_desc": "Stay up to date with the latest news and announcements from Solventics AI.",
+        "notice_desc": "Stay up to date with the latest news and announcements from Solventics AI Inc.",
         "notices": [
             {"date": "2026-01-06", "title": "Solventics AI Official Website Launched", "tag": "News"},
             {"date": "2025-12-30", "title": "Solventics AI Inc. Incorporation Completed", "tag": "Company"},
@@ -191,7 +211,7 @@ TEXT = {
 
         # Contact
         "contact_title": "Contact Us",
-        "contact_desc": "Let's design the future of your business together with Solventics AI.",
+        "contact_desc": "Let's design the future of your business together with Solventics AI Inc.",
         "form_name": "Name",
         "form_email": "Email",
         "form_message": "Message",
@@ -201,7 +221,7 @@ TEXT = {
         "form_success": ", your message has been received! We will get back to you shortly.",
         "form_error": "Submission failed due to a server connection issue.",
         "office_label": "📍 **Office:**",
-        "office_value": "311, 15, Nonhyeon-ro 152-gil, Gangnam-gu, Seoul, Korea (06025)",
+        "office_value": "Suite #311, 15 Nonhyeon-ro 152-gil, Gangnam-gu, Seoul, Korea 06025",
         "email_label": "📧 **Email:**",
 
         "footer": "© 2026 Solventics AI Inc. All Rights Reserved.",
@@ -257,7 +277,7 @@ def load_notices():
 
 # --- [5] 사이드바 ---
 with st.sidebar:
-    st.title("Solventics AI")
+    st.title("Solventics AI Inc.")
 
     # 언어 선택 토글 (한국어 기본값)
     lang_option = st.radio("🌐 Language / 언어", ["한국어", "English"],
@@ -321,15 +341,19 @@ elif page == menu[1]:
 # 3. Solutions
 elif page == menu[2]:
     st.title(T["solutions_title"])
-    tab1, tab2 = st.tabs([T["tab_consulting"], T["tab_saas"]])
+    tab1, tab2, tab3 = st.tabs([T["tab_onpremise"], T["tab_saas"], T["tab_consulting"]])
     with tab1:
-        st.header(T["consulting_title"])
-        for item in T["consulting_items"]:
-            st.write(f"- {item}")
+        st.header(T["onpremise_title"])
+        for item in T["onpremise_items"]:
+            st.markdown(f"- {item}")
     with tab2:
         st.header(T["saas_title"])
         for item in T["saas_items"]:
-            st.write(f"- {item}")
+            st.markdown(f"- {item}")
+    with tab3:
+        st.header(T["consulting_title"])
+        for item in T["consulting_items"]:
+            st.markdown(f"- {item}")
 
 # 4. Notice
 elif page == menu[3]:
