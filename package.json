@@ -1,0 +1,9 @@
+{
+  "name": "solventics-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Solventics AI Inc. static homepage with a Netlify Function contact form.",
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
