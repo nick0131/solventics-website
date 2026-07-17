@@ -750,7 +750,7 @@ document.querySelectorAll(".tab-btn").forEach(btn=>{
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
 },{threshold:.15});
-document.querySelectorAll(".panel, .lead-grid, .curve-box").forEach(el=>{
+document.querySelectorAll(".panel, .lead-grid, .curve-box, .news-list").forEach(el=>{
   el.classList.add("reveal");
   io.observe(el);
 });
