@@ -395,11 +395,11 @@
           <div class="tag"><span>K-ICS</span><span>SOLVENCY RATIO</span></div>
           <svg class="bar-chart" viewBox="0 0 320 150">
             <text class="bar-value" x="14" y="34" font-size="22" fill="#F4F6F9" font-family="var(--mono)">168%</text>
-            <text class="bar-label" x="14" y="50">가용자본 / 요구자본</text>
+            <text class="bar-label" x="14" y="50" data-i18n="kics_ratio_label">가용자본 / 요구자본</text>
             <rect class="ratio-track" x="14" y="70" width="292" height="16" rx="2"></rect>
             <rect class="ratio-fill"  x="14" y="70" width="292" height="16" rx="2" fill="var(--gold)"></rect>
             <line class="ratio-mark" x1="188" y1="62" x2="188" y2="94"></line>
-            <text class="bar-label" x="188" y="112" text-anchor="middle">100% 기준선</text>
+            <text class="bar-label" x="188" y="112" text-anchor="middle" data-i18n="kics_baseline">100% 기준선</text>
             <text class="bar-label" x="306" y="112" text-anchor="end">168%</text>
           </svg>
           <div class="curve-caption">RISK-BASED SOLVENCY, ILLUSTRATIVE<br>SOLVENTICS AI PROPRIETARY ANALYSIS</div>
@@ -618,6 +618,7 @@ const TEXT = {
     form_fallback:"현재 접수 서버가 연결되지 않았습니다. contact@solventicsai.com 으로 직접 메일 부탁드립니다.",
     office_label:"OFFICE", office_value:"(06025) 서울특별시 강남구 논현로 152길 15, 3층 311호",
     email_label:"EMAIL", ceo_label:"CEO",
+    kics_ratio_label:"가용자본 / 요구자본", kics_baseline:"100% 기준선",
     footer:"© 2026 Solventics AI Inc. All Rights Reserved."
   },
   en: {
@@ -667,6 +668,7 @@ const TEXT = {
     form_fallback:"The contact server isn't connected yet. Please email contact@solventicsai.com directly.",
     office_label:"OFFICE", office_value:"Suite #311, 15 Nonhyeon-ro 152-gil, Gangnam-gu, Seoul, Korea 06025",
     email_label:"EMAIL", ceo_label:"CEO",
+    kics_ratio_label:"Available Capital / Required Capital", kics_baseline:"100% Threshold",
     footer:"© 2026 Solventics AI Inc. All Rights Reserved."
   }
 };
